@@ -1,0 +1,14 @@
+State Codes:
+https://www.nrcs.usda.gov/wps/portal/nrcs/detail/?cid=nrcs143_013696
+
+
+FIPS Codes Reference:
+https://www.census.gov/library/reference/code-lists/ansi.html#vd
+
+
+Georgia County Codes:
+https://www2.census.gov/geo/docs/reference/codes/files/st13_ga_cou.txt
+
+
+Georgia Voting District Codes:
+https://www2.census.gov/geo/docs/reference/codes/files/st13_ga_vtd.txt

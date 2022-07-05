@@ -1,0 +1,152 @@
+--combine all 2018, 2014, 2010 & 2006 election returns and 2018, 2014 & 2010 census data into a single datasource
+CREATE OR REPLACE TABLE
+`political-data-354221.datasources.georgia_midterm_elections_2006_through_2018` AS
+
+SELECT
+
+--select columns from 2018 election results
+election2018.state AS state,
+election2018.county AS county,
+election2018.county_fips_code AS fips_code,
+election2018.registered_voters AS election2018_registered_voters,
+election2018.ballots_cast AS election2018_ballots_cast,
+
+--select columns from 2014 election results
+election2014.registered_voters AS election2014_registered_voters,
+election2014.ballots_cast AS election2014_ballots_cast,
+
+--select columns from 2010 election results
+election2010.registered_voters AS election2010_registered_voters,
+election2010.ballots_cast AS election2010_ballots_cast,
+
+--select columns from 2006 election results
+election2006.registered_voters AS election2006_registered_voters,
+election2006.ballots_cast AS election2006_ballots_cast,
+
+--select columns from 2018 American Community Survey
+census2018.white_pct AS census2018_white_pct,
+census2018.black_pct AS census2018_black_pct,
+census2018.hispanic_pct AS census2018_hispanic_pct,
+census2018.asian_pct AS census2018_asian_pct,
+census2018.amerindian_pct AS census2018_amerindian_pct,
+census2018.other_race_pct AS census2018_other_race_pct,
+census2018.male_pct AS census2018_male_pct,
+census2018.female_pct AS census2018_female_pct,
+census2018.under_age_18_pct AS census2018_under_age_18_pct,
+census2018.ages_18_to_24_pct AS census2018_ages_18_to_24_pct,
+census2018.ages_25_to_39_pct AS census2018_ages_25_to_39_pct,
+census2018.ages_40_to_64_pct AS census2018_ages_40_to_64_pct,
+census2018.ages_65_and_over_pct AS census2018_ages_65_and_over_pct,
+census2018.highest_edudation_level_high_school_diploma_pct AS census2018_highest_edudation_level_high_school_diploma_pct,
+census2018.highest_edudation_level_bachelors_degree_pct AS census2018_highest_edudation_level_bachelors_degree_pct,
+census2018.highest_edudation_level_masters_degree_pct AS census2018_highest_edudation_level_masters_degree_pct,
+census2018.household_income_less_than_10k_pct AS census2018_household_income_less_than_10k_pct,
+census2018.household_income_20_to_40k_pct AS census2018_household_income_20_to_40k_pct,
+census2018.household_income_40_to_60k_pct AS census2018_household_income_40_to_60k_pct,
+census2018.income_60_to_100k_pct AS census2018_income_60_to_100k_pct,
+census2018.household_income_100_to_200k_pct AS census2018_household_income_100_to_200k_pct,
+census2018.household_income_200k_or_more_pct AS census2018_household_income_200k_or_more_pct,
+census2018.poverty_pct AS census2018_poverty_pct,
+census2018.families_with_young_children_pct AS census2018_families_with_young_children_pct,
+census2018.married_households_pct AS census2018_married_households_pct,
+census2018.commuters_by_public_transportation_pct AS census2018_commuters_by_public_transportation_pct,
+census2018.households_without_a_car_pct AS census2018_households_without_a_car_pct,
+
+--select columns from 2014 American Community Survey
+census2014.white_pct AS census2014_white_pct,
+census2014.black_pct AS census2014_black_pct,
+census2014.hispanic_pct AS census2014_hispanic_pct,
+census2014.asian_pct AS census2014_asian_pct,
+census2014.amerindian_pct AS census2014_amerindian_pct,
+census2014.other_race_pct AS census2014_other_race_pct,
+census2014.male_pct AS census2014_male_pct,
+census2014.female_pct AS census2014_female_pct,
+census2014.under_age_18_pct AS census2014_under_age_18_pct,
+census2014.ages_18_to_24_pct AS census2014_ages_18_to_24_pct,
+census2014.ages_25_to_39_pct AS census2014_ages_25_to_39_pct,
+census2014.ages_40_to_64_pct AS census2014_ages_40_to_64_pct,
+census2014.ages_65_and_over_pct AS census2014_ages_65_and_over_pct,
+census2014.highest_edudation_level_high_school_diploma_pct AS census2014_highest_edudation_level_high_school_diploma_pct,
+census2014.highest_edudation_level_bachelors_degree_pct AS census2014_highest_edudation_level_bachelors_degree_pct,
+census2014.highest_edudation_level_masters_degree_pct AS census2014_highest_edudation_level_masters_degree_pct,
+census2014.household_income_less_than_10k_pct AS census2014_household_income_less_than_10k_pct,
+census2014.household_income_20_to_40k_pct AS census2014_household_income_20_to_40k_pct,
+census2014.household_income_40_to_60k_pct AS census2014_household_income_40_to_60k_pct,
+census2014.income_60_to_100k_pct AS census2014_income_60_to_100k_pct,
+census2014.household_income_100_to_200k_pct AS census2014_household_income_100_to_200k_pct,
+census2014.household_income_200k_or_more_pct AS census2014_household_income_200k_or_more_pct,
+census2014.poverty_pct AS census2014_poverty_pct,
+census2014.families_with_young_children_pct AS census2014_families_with_young_children_pct,
+census2014.married_households_pct AS census2014_married_households_pct,
+census2014.commuters_by_public_transportation_pct AS census2014_commuters_by_public_transportation_pct,
+census2014.households_without_a_car_pct AS census2014_households_without_a_car_pct,
+
+--select columns from 2010 American Community Survey
+census2010.white_pct AS census2010_white_pct,
+census2010.black_pct AS census2010_black_pct,
+census2010.hispanic_pct AS census2010_hispanic_pct,
+census2010.asian_pct AS census2010_asian_pct,
+census2010.amerindian_pct AS census2010_amerindian_pct,
+census2010.other_race_pct AS census2010_other_race_pct,
+census2010.male_pct AS census2010_male_pct,
+census2010.female_pct AS census2010_female_pct,
+census2010.under_age_18_pct AS census2010_under_age_18_pct,
+census2010.ages_18_to_24_pct AS census2010_ages_18_to_24_pct,
+census2010.ages_25_to_39_pct AS census2010_ages_25_to_39_pct,
+census2010.ages_40_to_64_pct AS census2010_ages_40_to_64_pct,
+census2010.ages_65_and_over_pct AS census2010_ages_65_and_over_pct,
+census2010.household_income_less_than_10k_pct AS census2010_household_income_less_than_10k_pct,
+census2010.household_income_20_to_40k_pct AS census2010_household_income_20_to_40k_pct,
+census2010.household_income_40_to_60k_pct AS census2010_household_income_40_to_60k_pct,
+census2010.income_60_to_100k_pct AS census2010_income_60_to_100k_pct,
+census2010.household_income_100_to_200k_pct AS census2010_household_income_100_to_200k_pct,
+census2010.household_income_200k_or_more_pct AS census2010_household_income_200k_or_more_pct,
+census2010.poverty_pct AS census2010_poverty_pct,
+census2010.families_with_young_children_pct AS census2010_families_with_young_children_pct,
+census2010.married_households_pct AS census2010_married_households_pct,
+census2010.households_without_a_car_pct AS census2010_households_without_a_car_pct
+
+FROM
+`political-data-354221.election_returns.georgia_midterm_general_election_results_by_county_fips_code_2018` election2018
+
+--join the election results tables
+LEFT JOIN
+`political-data-354221.election_returns.georgia_midterm_general_election_results_by_county_fips_code_2014` election2014
+
+ON
+election2018.county_fips_code = election2014.county_fips_code
+
+LEFT JOIN
+`political-data-354221.election_returns.georgia_midterm_general_election_results_by_county_fips_code_2010` election2010
+
+ON
+election2018.county_fips_code = election2010.county_fips_code
+
+LEFT JOIN
+`political-data-354221.election_returns.georgia_midterm_general_election_results_by_county_fips_code_2006` election2006
+
+ON
+election2018.county_fips_code = election2006.county_fips_code
+
+
+--join the census data tables
+LEFT JOIN
+`political-data-354221.census_data.georgia_census_data_by_county_2018` census2018
+
+ON
+election2018.county_fips_code = census2018.county_fips
+
+LEFT JOIN
+`political-data-354221.census_data.georgia_census_data_by_county_2014` census2014
+
+ON
+election2018.county_fips_code = census2014.county_fips
+
+LEFT JOIN
+`political-data-354221.census_data.georgia_census_data_by_county_2010` census2010
+
+ON
+election2018.county_fips_code = census2010.county_fips
+
+ORDER BY state, county
+;

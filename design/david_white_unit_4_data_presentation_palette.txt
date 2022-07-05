@@ -1,0 +1,53 @@
+========================
+COLORS:
+
+Main Colors:
+
+"Deep Navy" (darkest blue)
+#181B30
+
+
+"Soft Blue" (lightest blue)
+#D7EBFF
+
+
+White
+#FFFFFF
+
+
+
+Accent Colors:
+
+"True Red"
+#D1332B
+
+
+"Light Blue" (medium light Blue)
+#467DBB
+========================
+
+
+========================
+USAGE:
+
+Cover Pages (front and back):
+Background: True Navy
+Text: Soft Blue/White
+
+
+Section Tabs
+Background: Soft Blue
+Text: True Navy
+
+
+Body Pages
+Background: White
+Text: True Navy
+Ribbon (upper right) Background: Soft BLue
+========================
+
+
+
+
+
+
